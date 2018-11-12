@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.baizhi.dao.EmplDao">
+    <insert id="save">
+        INSERT INTO `ems`.`ems_empl` (`name`, `salary`, `age`)
+        VALUES (#{name}, #{salary}, #{age});
+    </insert>
+
+    <delete id="delete">
+        delete from ems_empl
+        where id=#{id}
+    </delete>
+
+    <update id="update">
+        UPDATE `ems`.`ems_empl` SET `name`=#{name},
+                `salary`=#{salary}, `age`=#{age}
+        WHERE (`id`=#{id});
+    </update>
+
+    <select id="queryOne" resultType="Empl">
+        select id,name,salary,age
+        from ems_empl
+        where id=#{id}
+    </select>
+
+    <select id="queryAll" resultType="Empl">
+        select id,name,salary,age
+        from ems_empl
+    </select>
+</mapper>

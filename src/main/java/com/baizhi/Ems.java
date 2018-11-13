@@ -8,6 +8,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @MapperScan("com.baizhi.dao")
 public class Ems {
     public static void main(String[] args) {
+
         SpringApplication.run(Ems.class,args);
+        System.out.println("aaaaaaaaaaaaaaa");
     }
+
 }
